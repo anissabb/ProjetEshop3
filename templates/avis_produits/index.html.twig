@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<style></style>
+{% endblock %}
+
+{% block body %}
+
+    <div class="form">
+    {{form_start (AvisForm)}}
+    {{form_row (AvisForm.commentaire)}}
+    {{form_end (AvisForm,{render_rest:false})}}
+    </br>
+     <div class="button">
+            <button type="submit" class="btn">Envoyer</button>
+        </div>
+    </div>
+{% endblock %}

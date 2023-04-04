@@ -1,0 +1,112 @@
+{% extends 'base.html.twig' %}
+
+
+
+
+{% block stylesheets %}
+     
+  <style>
+<<<<<<< HEAD
+    .card-deck{
+        padding-top:100px
+    }
+=======
+    
+>>>>>>> f46066234eb81eea55f3b97f63a0413c6cb72d28
+    .produit img{
+      width:100px;
+      height:100px;
+      }
+<<<<<<< HEAD
+      .card-deck{
+=======
+
+      .card-deck{
+
+>>>>>>> f46066234eb81eea55f3b97f63a0413c6cb72d28
+        margin-top:100px;
+      }
+      .card-body>img{
+        width:80%
+      }
+      .card{
+        float:left;
+        width:20%;
+        margin-left:9%;
+        border-color:white;
+        
+      }
+      .card-title{
+        margin-top:10%;
+        text-decoration:none;
+        
+        color:black;
+      }
+     a{
+        text-decoration:none;
+      }
+      #cardbody{
+        width:100%
+      }
+      #cardbodyimg{
+        width:100%
+      }
+      .button{
+        width:100%;
+        padding-left:20%
+      }
+      .button>a{
+        border:none;
+        width:62%;
+<<<<<<< HEAD
+=======
+
+>>>>>>> f46066234eb81eea55f3b97f63a0413c6cb72d28
+      }
+      .link-dark{
+        text-decoration:none;
+      }
+<<<<<<< HEAD
+=======
+
+>>>>>>> f46066234eb81eea55f3b97f63a0413c6cb72d28
+  </style>
+
+{% endblock %}
+
+
+{% block body %}
+
+
+  {% block header %}
+    {% include "./header/header.html.twig" %}
+  {% endblock %}
+
+
+    
+    <div class="card-deck">
+   
+      
+       <div class="card" style="border:none">
+          <div id="cardbody" class="card-body"style="font-family:Didot">
+            <img id="cardbodyimg" class="card-img-top" src={{asset(produit.images)}} alt="Card image cap"></a>
+            
+          <a  class="link-dark" href="{{ path('app_produit_id',{'id':produit.id})}}"><h5 class="card-title" style="text-decoration:none">{{produit.nomProduit}}</h5></a>
+      
+            <p class="card-text" style="font-size:20px">{{produit.prixProduit}}€</p>
+          </div>
+              <div class="button">
+                  <a class="btn btn-primary" style="background-color:#C19770" href="{{path('cart_add',{'id':produit.id}) }}">Ajouter</a>
+                  </div>
+            
+        </div>
+        
+  
+    </div>
+<<<<<<< HEAD
+    {% include "./avis_produits/index.html.twig" %}
+{% endblock %}
+=======
+            
+{% endblock %}
+>>>>>>> f46066234eb81eea55f3b97f63a0413c6cb72d28

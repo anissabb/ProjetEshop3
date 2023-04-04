@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+
+{% block stylesheets %}
+    <style>
+        .button{
+    padding-left:8%;
+    padding-top:1%
+}
+    button{
+        background-color:#C19770;
+        border:none;
+        color:white;
+        border-radius:20px;
+        height:30px;
+        width:100px;
+
+    }
+    </style>
+{% endblock %}
+{% block body %}
+    <h1>Informations personnelles</h1>
+
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email) }}
+         {{ form_row(registrationForm.nomClient) }}
+          {{ form_row(registrationForm.prenomClient) }}
+           {{ form_row(registrationForm.adresseClient) }}
+           {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+       
+        <div class="button">
+        <button type="submit"  class="btn">Suivant</button>
+        </div>
+        
+        
+        
+    {{ form_end(registrationForm,{render_rest:false}) }}
+{% endblock %}

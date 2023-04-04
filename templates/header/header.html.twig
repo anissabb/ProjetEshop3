@@ -1,0 +1,167 @@
+{% extends 'base.html.twig' %}
+
+
+
+
+{% block stylesheet %}
+
+
+<style>
+   .header {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0px;
+  z-index: 1000;
+  background-color:#e4dcd1
+  }
+
+  .header >.nav{margin-right:20%;
+  }
+    .header img{
+        width:100px;
+        height:100px;
+    }
+  .header nav{
+    float:right;
+    
+  }
+ 
+.header nav ul {
+  list-style-type: none;
+  float: left;
+  text-decoration: none;
+}
+.header nav ul li {
+  font-size: 25px;
+}
+.header nav ul li {
+  float: left;
+  font-size: 25px;
+  padding-left: 20px;
+  font-family: "Didot";
+  margin-left:20px;
+  margin-top:50px;
+}
+.header li{
+  display:inline-block;
+}
+
+.header nav ul li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+.header nav ul li a:hover{
+    color:white
+}
+
+.sub-menu{
+  height:100px;
+  display:none;
+  background-color:beige;
+  
+}
+.sub-menu li{
+  height:50%;
+  width:50%;
+
+}
+.sub-menu li a {
+  margin-right:25px;
+}
+.sub-menu  a{
+  font-size:18px;
+}
+.header li:hover .sub-menu{
+  display:block
+}
+.produits{
+  margin-top:20%;
+  width:100px;
+  height:100px;
+  
+}
+.produit img{
+  width:100px;
+  height:100px;
+}
+
+.sub-menu{
+  height:100px;
+  display:none;
+  background-color:white;
+  
+}
+.sub-menu li{
+  height:50%;
+  width:50%;
+}
+.sub-menu li a {
+  margin-right:25px;
+}
+.sub-menu  a{
+  font-size:18px;
+}
+.header li:hover .sub-menu{
+  display:block
+}
+</style>
+{% endblock %} 
+
+{% block javascripts %}
+
+<script>
+
+</script>
+{% endblock %}
+
+{% block body %}
+
+<div class="header">
+ <img src={{asset('images/logo.png')}}>
+
+    <nav class="nav">
+   
+        <ul>
+             
+              <li> <a href="{{path('app_accueil')}}">Accueil</a></li>
+             
+           
+
+            
+            <li><a href="{{path('app_cart')}}">Mon panier</i></a></li>
+            {% if is_granted('IS_AUTHENTICATED_FULLY')  %}
+                
+                      <li><a href="{{path('app_compte')}}">Mon compte</a>
+<<<<<<< HEAD
+                       <ul class="sub-menu">
+=======
+                        <ul class="sub-menu">
+>>>>>>> f46066234eb81eea55f3b97f63a0413c6cb72d28
+                          <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
+            {% else %}
+                          <li><a href="{{ path('app_login') }}">Se connecter</a></li>
+                          <li><a href="{{ path('app_register') }}">S'inscrire</a></li>
+            
+                        </ul>
+                      
+            {% endif %}
+                      </li>
+<<<<<<< HEAD
+=======
+      
+
+                
+           
+>>>>>>> f46066234eb81eea55f3b97f63a0413c6cb72d28
+
+          
+        </ul>
+    </nav>
+
+
+
+
+</div>
+{% endblock body %}

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@paypal/paypal-js": "^5.1.6",
+    "bootstrap-icons": "^1.10.3"
+  }
+}

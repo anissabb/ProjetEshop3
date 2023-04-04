@@ -1,0 +1,119 @@
+{% extends 'base.html.twig' %}
+
+
+
+
+ {% block stylesheets %}
+
+
+<style>
+
+.panier{
+    margin-top:150px;
+    margin-left:50px;
+}
+tbody{
+    width:100%
+}
+td{
+    padding-left:30px
+}
+.produitImage{
+    width:50px;
+}
+.total{
+    
+    padding-left:10%;
+}
+.total>h3{
+    float:left;
+    padding-left:5%;
+}
+.total>h4{
+    float:left;
+    padding-left:51%
+}
+
+.suivant{
+    margin-top:100px;
+    margin-left:64%
+}
+.suivant>a{
+    display:inline-block;
+    height:40px;
+    width:100px;
+    padding-left:4%;
+    padding-top:1%;
+    background-color:#C19770;
+    color:white;
+    text-decoration:none;
+    border-radius:20px;
+
+}
+img{
+    width:30px
+}
+
+</style>
+{% endblock %}
+
+
+{% block body %}
+
+
+
+{% block header %}
+    {% include "./header/header.html.twig" %}
+{% endblock %}
+
+
+<div class="panier">
+    <h1>Mon panier</h1>
+    {% if items | length >0 %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Aperçu</th>
+                <th>Produit</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+                <th>Montant total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+                <tr>
+                    <td> <img class="produitImage" src={{asset(item.produit.images)}} width="100px"></td>
+                    <td> {{item.produit.nomProduit}}</td>
+                    <td>{{item.produit.prixProduit}} €</td>
+                    <td>{{item.quantity}}</td>
+                    <td>{{item.produit.prixProduit * item.quantity}} €</td>
+                      <td>
+                        <a class="text-body" href="{{path('cart_add',{'id':item.produit.id})}}"><img src={{asset('images/plus.svg')}}></i></a>
+                    </td>
+                    <td>
+                        <a class="text-body"href="{{path('cart_remove',{'id':item.produit.id})}}"><img src={{asset('images/trash.svg')}}></a>
+
+                    </td>
+                  
+                </tr>
+            {% endfor %}
+         </tbody>
+ 
+    </table>
+
+ <div class="total">
+    <h3>Total:</h3>
+    <h4>{{total}} €</h4>
+</div>
+
+<div class="suivant">
+    <a class="link-dark" style="color:black" href="{{path('app_infos_commande')}}">Suivant</a>
+</div>
+    {% else %}
+       <p>Votre panier est vide </p>
+    {% endif %}
+    
+</div>
+{% endblock %}
